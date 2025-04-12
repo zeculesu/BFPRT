@@ -127,6 +127,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named example
+
+# Build rule for target.
+example: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example
+.PHONY : example
+
+# fast build rule for target.
+example/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/example.dir/build.make CMakeFiles/example.dir/build
+.PHONY : example/fast
+
+#=============================================================================
 # Target rules for targets named BFPRTLib
 
 # Build rule for target.
@@ -140,30 +153,43 @@ BFPRTLib/fast:
 .PHONY : BFPRTLib/fast
 
 #=============================================================================
-# Target rules for targets named test_median
+# Target rules for targets named test_bfprt_impl
 
 # Build rule for target.
-test_median: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_median
-.PHONY : test_median
+test_bfprt_impl: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_bfprt_impl
+.PHONY : test_bfprt_impl
 
 # fast build rule for target.
-test_median/fast:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_median.dir/build.make tests/CMakeFiles/test_median.dir/build
-.PHONY : test_median/fast
+test_bfprt_impl/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_bfprt_impl.dir/build.make tests/CMakeFiles/test_bfprt_impl.dir/build
+.PHONY : test_bfprt_impl/fast
 
 #=============================================================================
-# Target rules for targets named test_nthSmallest
+# Target rules for targets named test_exceptions
 
 # Build rule for target.
-test_nthSmallest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_nthSmallest
-.PHONY : test_nthSmallest
+test_exceptions: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_exceptions
+.PHONY : test_exceptions
 
 # fast build rule for target.
-test_nthSmallest/fast:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_nthSmallest.dir/build.make tests/CMakeFiles/test_nthSmallest.dir/build
-.PHONY : test_nthSmallest/fast
+test_exceptions/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_exceptions.dir/build.make tests/CMakeFiles/test_exceptions.dir/build
+.PHONY : test_exceptions/fast
+
+#=============================================================================
+# Target rules for targets named test_medianOfMedians
+
+# Build rule for target.
+test_medianOfMedians: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_medianOfMedians
+.PHONY : test_medianOfMedians
+
+# fast build rule for target.
+test_medianOfMedians/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_medianOfMedians.dir/build.make tests/CMakeFiles/test_medianOfMedians.dir/build
+.PHONY : test_medianOfMedians/fast
 
 #=============================================================================
 # Target rules for targets named test_partition
@@ -179,17 +205,41 @@ test_partition/fast:
 .PHONY : test_partition/fast
 
 #=============================================================================
-# Target rules for targets named test_partition5
+# Target rules for targets named bfprt_benchmarks
 
 # Build rule for target.
-test_partition5: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_partition5
-.PHONY : test_partition5
+bfprt_benchmarks: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bfprt_benchmarks
+.PHONY : bfprt_benchmarks
 
 # fast build rule for target.
-test_partition5/fast:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_partition5.dir/build.make tests/CMakeFiles/test_partition5.dir/build
-.PHONY : test_partition5/fast
+bfprt_benchmarks/fast:
+	$(MAKE) $(MAKESILENT) -f benchmarks/CMakeFiles/bfprt_benchmarks.dir/build.make benchmarks/CMakeFiles/bfprt_benchmarks.dir/build
+.PHONY : bfprt_benchmarks/fast
+
+example.o: example.cpp.o
+.PHONY : example.o
+
+# target to build an object file
+example.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/example.dir/build.make CMakeFiles/example.dir/example.cpp.o
+.PHONY : example.cpp.o
+
+example.i: example.cpp.i
+.PHONY : example.i
+
+# target to preprocess a source file
+example.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/example.dir/build.make CMakeFiles/example.dir/example.cpp.i
+.PHONY : example.cpp.i
+
+example.s: example.cpp.s
+.PHONY : example.s
+
+# target to generate assembly for a file
+example.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/example.dir/build.make CMakeFiles/example.dir/example.cpp.s
+.PHONY : example.cpp.s
 
 # Help Target
 help:
@@ -201,10 +251,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... BFPRTLib"
-	@echo "... test_median"
-	@echo "... test_nthSmallest"
+	@echo "... bfprt_benchmarks"
+	@echo "... example"
+	@echo "... test_bfprt_impl"
+	@echo "... test_exceptions"
+	@echo "... test_medianOfMedians"
 	@echo "... test_partition"
-	@echo "... test_partition5"
+	@echo "... example.o"
+	@echo "... example.i"
+	@echo "... example.s"
 .PHONY : help
 
 

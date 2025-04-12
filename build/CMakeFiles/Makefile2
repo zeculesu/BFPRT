@@ -63,19 +63,39 @@ CMAKE_BINARY_DIR = /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/example.dir/all
 all: src/all
 all: tests/all
+all: benchmarks/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: src/preinstall
 preinstall: tests/preinstall
+preinstall: benchmarks/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/example.dir/clean
 clean: src/clean
 clean: tests/clean
+clean: benchmarks/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory benchmarks
+
+# Recursive "all" directory target.
+benchmarks/all: benchmarks/CMakeFiles/bfprt_benchmarks.dir/all
+.PHONY : benchmarks/all
+
+# Recursive "preinstall" directory target.
+benchmarks/preinstall:
+.PHONY : benchmarks/preinstall
+
+# Recursive "clean" directory target.
+benchmarks/clean: benchmarks/CMakeFiles/bfprt_benchmarks.dir/clean
+.PHONY : benchmarks/clean
 
 #=============================================================================
 # Directory level rules for directory src
@@ -96,10 +116,10 @@ src/clean: src/CMakeFiles/BFPRTLib.dir/clean
 # Directory level rules for directory tests
 
 # Recursive "all" directory target.
-tests/all: tests/CMakeFiles/test_median.dir/all
-tests/all: tests/CMakeFiles/test_nthSmallest.dir/all
+tests/all: tests/CMakeFiles/test_bfprt_impl.dir/all
+tests/all: tests/CMakeFiles/test_exceptions.dir/all
+tests/all: tests/CMakeFiles/test_medianOfMedians.dir/all
 tests/all: tests/CMakeFiles/test_partition.dir/all
-tests/all: tests/CMakeFiles/test_partition5.dir/all
 .PHONY : tests/all
 
 # Recursive "preinstall" directory target.
@@ -107,11 +127,37 @@ tests/preinstall:
 .PHONY : tests/preinstall
 
 # Recursive "clean" directory target.
-tests/clean: tests/CMakeFiles/test_median.dir/clean
-tests/clean: tests/CMakeFiles/test_nthSmallest.dir/clean
+tests/clean: tests/CMakeFiles/test_bfprt_impl.dir/clean
+tests/clean: tests/CMakeFiles/test_exceptions.dir/clean
+tests/clean: tests/CMakeFiles/test_medianOfMedians.dir/clean
 tests/clean: tests/CMakeFiles/test_partition.dir/clean
-tests/clean: tests/CMakeFiles/test_partition5.dir/clean
 .PHONY : tests/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/example.dir
+
+# All Build rule for target.
+CMakeFiles/example.dir/all: src/CMakeFiles/BFPRTLib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/example.dir/build.make CMakeFiles/example.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/example.dir/build.make CMakeFiles/example.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles --progress-num=5,6 "Built target example"
+.PHONY : CMakeFiles/example.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/example.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/example.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles 0
+.PHONY : CMakeFiles/example.dir/rule
+
+# Convenience name for target.
+example: CMakeFiles/example.dir/rule
+.PHONY : example
+
+# clean rule for target.
+CMakeFiles/example.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/example.dir/build.make CMakeFiles/example.dir/clean
+.PHONY : CMakeFiles/example.dir/clean
 
 #=============================================================================
 # Target rules for target src/CMakeFiles/BFPRTLib.dir
@@ -140,56 +186,82 @@ src/CMakeFiles/BFPRTLib.dir/clean:
 .PHONY : src/CMakeFiles/BFPRTLib.dir/clean
 
 #=============================================================================
-# Target rules for target tests/CMakeFiles/test_median.dir
+# Target rules for target tests/CMakeFiles/test_bfprt_impl.dir
 
 # All Build rule for target.
-tests/CMakeFiles/test_median.dir/all: src/CMakeFiles/BFPRTLib.dir/all
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_median.dir/build.make tests/CMakeFiles/test_median.dir/depend
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_median.dir/build.make tests/CMakeFiles/test_median.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles --progress-num=3,4 "Built target test_median"
-.PHONY : tests/CMakeFiles/test_median.dir/all
+tests/CMakeFiles/test_bfprt_impl.dir/all: src/CMakeFiles/BFPRTLib.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_bfprt_impl.dir/build.make tests/CMakeFiles/test_bfprt_impl.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_bfprt_impl.dir/build.make tests/CMakeFiles/test_bfprt_impl.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles --progress-num=7,8 "Built target test_bfprt_impl"
+.PHONY : tests/CMakeFiles/test_bfprt_impl.dir/all
 
 # Build rule for subdir invocation for target.
-tests/CMakeFiles/test_median.dir/rule: cmake_check_build_system
+tests/CMakeFiles/test_bfprt_impl.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_median.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_bfprt_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles 0
-.PHONY : tests/CMakeFiles/test_median.dir/rule
+.PHONY : tests/CMakeFiles/test_bfprt_impl.dir/rule
 
 # Convenience name for target.
-test_median: tests/CMakeFiles/test_median.dir/rule
-.PHONY : test_median
+test_bfprt_impl: tests/CMakeFiles/test_bfprt_impl.dir/rule
+.PHONY : test_bfprt_impl
 
 # clean rule for target.
-tests/CMakeFiles/test_median.dir/clean:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_median.dir/build.make tests/CMakeFiles/test_median.dir/clean
-.PHONY : tests/CMakeFiles/test_median.dir/clean
+tests/CMakeFiles/test_bfprt_impl.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_bfprt_impl.dir/build.make tests/CMakeFiles/test_bfprt_impl.dir/clean
+.PHONY : tests/CMakeFiles/test_bfprt_impl.dir/clean
 
 #=============================================================================
-# Target rules for target tests/CMakeFiles/test_nthSmallest.dir
+# Target rules for target tests/CMakeFiles/test_exceptions.dir
 
 # All Build rule for target.
-tests/CMakeFiles/test_nthSmallest.dir/all: src/CMakeFiles/BFPRTLib.dir/all
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_nthSmallest.dir/build.make tests/CMakeFiles/test_nthSmallest.dir/depend
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_nthSmallest.dir/build.make tests/CMakeFiles/test_nthSmallest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles --progress-num=5,6 "Built target test_nthSmallest"
-.PHONY : tests/CMakeFiles/test_nthSmallest.dir/all
+tests/CMakeFiles/test_exceptions.dir/all: src/CMakeFiles/BFPRTLib.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_exceptions.dir/build.make tests/CMakeFiles/test_exceptions.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_exceptions.dir/build.make tests/CMakeFiles/test_exceptions.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles --progress-num=9,10 "Built target test_exceptions"
+.PHONY : tests/CMakeFiles/test_exceptions.dir/all
 
 # Build rule for subdir invocation for target.
-tests/CMakeFiles/test_nthSmallest.dir/rule: cmake_check_build_system
+tests/CMakeFiles/test_exceptions.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_nthSmallest.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_exceptions.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles 0
-.PHONY : tests/CMakeFiles/test_nthSmallest.dir/rule
+.PHONY : tests/CMakeFiles/test_exceptions.dir/rule
 
 # Convenience name for target.
-test_nthSmallest: tests/CMakeFiles/test_nthSmallest.dir/rule
-.PHONY : test_nthSmallest
+test_exceptions: tests/CMakeFiles/test_exceptions.dir/rule
+.PHONY : test_exceptions
 
 # clean rule for target.
-tests/CMakeFiles/test_nthSmallest.dir/clean:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_nthSmallest.dir/build.make tests/CMakeFiles/test_nthSmallest.dir/clean
-.PHONY : tests/CMakeFiles/test_nthSmallest.dir/clean
+tests/CMakeFiles/test_exceptions.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_exceptions.dir/build.make tests/CMakeFiles/test_exceptions.dir/clean
+.PHONY : tests/CMakeFiles/test_exceptions.dir/clean
+
+#=============================================================================
+# Target rules for target tests/CMakeFiles/test_medianOfMedians.dir
+
+# All Build rule for target.
+tests/CMakeFiles/test_medianOfMedians.dir/all: src/CMakeFiles/BFPRTLib.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_medianOfMedians.dir/build.make tests/CMakeFiles/test_medianOfMedians.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_medianOfMedians.dir/build.make tests/CMakeFiles/test_medianOfMedians.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles --progress-num=11,12 "Built target test_medianOfMedians"
+.PHONY : tests/CMakeFiles/test_medianOfMedians.dir/all
+
+# Build rule for subdir invocation for target.
+tests/CMakeFiles/test_medianOfMedians.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_medianOfMedians.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles 0
+.PHONY : tests/CMakeFiles/test_medianOfMedians.dir/rule
+
+# Convenience name for target.
+test_medianOfMedians: tests/CMakeFiles/test_medianOfMedians.dir/rule
+.PHONY : test_medianOfMedians
+
+# clean rule for target.
+tests/CMakeFiles/test_medianOfMedians.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_medianOfMedians.dir/build.make tests/CMakeFiles/test_medianOfMedians.dir/clean
+.PHONY : tests/CMakeFiles/test_medianOfMedians.dir/clean
 
 #=============================================================================
 # Target rules for target tests/CMakeFiles/test_partition.dir
@@ -198,7 +270,7 @@ tests/CMakeFiles/test_nthSmallest.dir/clean:
 tests/CMakeFiles/test_partition.dir/all: src/CMakeFiles/BFPRTLib.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_partition.dir/build.make tests/CMakeFiles/test_partition.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_partition.dir/build.make tests/CMakeFiles/test_partition.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles --progress-num=7,8 "Built target test_partition"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles --progress-num=13,14 "Built target test_partition"
 .PHONY : tests/CMakeFiles/test_partition.dir/all
 
 # Build rule for subdir invocation for target.
@@ -218,30 +290,30 @@ tests/CMakeFiles/test_partition.dir/clean:
 .PHONY : tests/CMakeFiles/test_partition.dir/clean
 
 #=============================================================================
-# Target rules for target tests/CMakeFiles/test_partition5.dir
+# Target rules for target benchmarks/CMakeFiles/bfprt_benchmarks.dir
 
 # All Build rule for target.
-tests/CMakeFiles/test_partition5.dir/all: src/CMakeFiles/BFPRTLib.dir/all
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_partition5.dir/build.make tests/CMakeFiles/test_partition5.dir/depend
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_partition5.dir/build.make tests/CMakeFiles/test_partition5.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles --progress-num=9,10 "Built target test_partition5"
-.PHONY : tests/CMakeFiles/test_partition5.dir/all
+benchmarks/CMakeFiles/bfprt_benchmarks.dir/all: src/CMakeFiles/BFPRTLib.dir/all
+	$(MAKE) $(MAKESILENT) -f benchmarks/CMakeFiles/bfprt_benchmarks.dir/build.make benchmarks/CMakeFiles/bfprt_benchmarks.dir/depend
+	$(MAKE) $(MAKESILENT) -f benchmarks/CMakeFiles/bfprt_benchmarks.dir/build.make benchmarks/CMakeFiles/bfprt_benchmarks.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles --progress-num=3,4 "Built target bfprt_benchmarks"
+.PHONY : benchmarks/CMakeFiles/bfprt_benchmarks.dir/all
 
 # Build rule for subdir invocation for target.
-tests/CMakeFiles/test_partition5.dir/rule: cmake_check_build_system
+benchmarks/CMakeFiles/bfprt_benchmarks.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_partition5.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 benchmarks/CMakeFiles/bfprt_benchmarks.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/CMakeFiles 0
-.PHONY : tests/CMakeFiles/test_partition5.dir/rule
+.PHONY : benchmarks/CMakeFiles/bfprt_benchmarks.dir/rule
 
 # Convenience name for target.
-test_partition5: tests/CMakeFiles/test_partition5.dir/rule
-.PHONY : test_partition5
+bfprt_benchmarks: benchmarks/CMakeFiles/bfprt_benchmarks.dir/rule
+.PHONY : bfprt_benchmarks
 
 # clean rule for target.
-tests/CMakeFiles/test_partition5.dir/clean:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_partition5.dir/build.make tests/CMakeFiles/test_partition5.dir/clean
-.PHONY : tests/CMakeFiles/test_partition5.dir/clean
+benchmarks/CMakeFiles/bfprt_benchmarks.dir/clean:
+	$(MAKE) $(MAKESILENT) -f benchmarks/CMakeFiles/bfprt_benchmarks.dir/build.make benchmarks/CMakeFiles/bfprt_benchmarks.dir/clean
+.PHONY : benchmarks/CMakeFiles/bfprt_benchmarks.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -7,3 +7,8 @@ add_subdirectory(src)
 
 enable_testing()
 add_subdirectory(tests)
+add_subdirectory(benchmarks)
+
+add_executable(example example.cpp)
+target_link_libraries(example PRIVATE BFPRTLib)
+target_include_directories(example PRIVATE ${CMAKE_SOURCE_DIR}/src)

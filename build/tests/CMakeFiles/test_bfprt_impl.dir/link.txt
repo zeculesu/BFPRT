@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/test_bfprt_impl.dir/test_bfprt_impl.cpp.o -o test_bfprt_impl  ../src/libBFPRTLib.a /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a 

@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/bfprt_benchmarks.dir/test_performance.cpp.o -o bfprt_benchmarks  ../src/libBFPRTLib.a /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3 

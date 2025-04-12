@@ -1,146 +1,122 @@
-Start testing: Apr 12 14:45 MSK
+Start testing: Apr 12 17:57 MSK
 ----------------------------------------------------------
-1/4 Testing: test_median
-1/4 Test: test_median
-Command: "/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/tests/test_median"
+1/4 Testing: test_bfprt_impl
+1/4 Test: test_bfprt_impl
+Command: "/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/tests/test_bfprt_impl"
 Directory: /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/tests
-"test_median" start time: Apr 12 14:45 MSK
+"test_bfprt_impl" start time: Apr 12 17:57 MSK
 Output:
 ----------------------------------------------------------
 Running main() from ./googletest/src/gtest_main.cc
 [==========] Running 4 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 4 tests from MedianOfMedianTest
-[ RUN      ] MedianOfMedianTest.OddSizeVector
-/home/zeculesu/Desktop/Artemia/algo_dop/dop2/tests/test_median.cpp:12: Failure
-Expected equality of these values:
-  result
-    Which is: 2
-  expected
-    Which is: 3
-
-[  FAILED  ] MedianOfMedianTest.OddSizeVector (0 ms)
-[ RUN      ] MedianOfMedianTest.OddSizeArray
-/home/zeculesu/Desktop/Artemia/algo_dop/dop2/tests/test_median.cpp:20: Failure
-Expected equality of these values:
-  result
-    Which is: 2
-  expected
-    Which is: 3
-
-[  FAILED  ] MedianOfMedianTest.OddSizeArray (0 ms)
-[ RUN      ] MedianOfMedianTest.EvenSizeArray
-/home/zeculesu/Desktop/Artemia/algo_dop/dop2/tests/test_median.cpp:28: Failure
-Expected equality of these values:
-  result
-    Which is: 3
-  4.0
-    Which is: 4
-
-[  FAILED  ] MedianOfMedianTest.EvenSizeArray (0 ms)
-[ RUN      ] MedianOfMedianTest.SmallArrays
-unknown file: Failure
-C++ exception with description "nthSmallest: empty range" thrown in the test body.
-
-[  FAILED  ] MedianOfMedianTest.SmallArrays (0 ms)
-[----------] 4 tests from MedianOfMedianTest (0 ms total)
+[----------] 4 tests from BFPRTTest
+[ RUN      ] BFPRTTest.VectorAndArray
+[       OK ] BFPRTTest.VectorAndArray (0 ms)
+[ RUN      ] BFPRTTest.LargeRandomVectors
+[       OK ] BFPRTTest.LargeRandomVectors (37 ms)
+[ RUN      ] BFPRTTest.RepeatedElements
+[       OK ] BFPRTTest.RepeatedElements (586 ms)
+[ RUN      ] BFPRTTest.NegativeNumbers
+[       OK ] BFPRTTest.NegativeNumbers (0 ms)
+[----------] 4 tests from BFPRTTest (623 ms total)
 
 [----------] Global test environment tear-down
-[==========] 4 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 0 tests.
-[  FAILED  ] 4 tests, listed below:
-[  FAILED  ] MedianOfMedianTest.OddSizeVector
-[  FAILED  ] MedianOfMedianTest.OddSizeArray
-[  FAILED  ] MedianOfMedianTest.EvenSizeArray
-[  FAILED  ] MedianOfMedianTest.SmallArrays
-
- 4 FAILED TESTS
+[==========] 4 tests from 1 test suite ran. (623 ms total)
+[  PASSED  ] 4 tests.
 <end of output>
-Test time =   0.00 sec
+Test time =   0.63 sec
 ----------------------------------------------------------
-Test Failed.
-"test_median" end time: Apr 12 14:45 MSK
-"test_median" time elapsed: 00:00:00
+Test Passed.
+"test_bfprt_impl" end time: Apr 12 17:57 MSK
+"test_bfprt_impl" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/4 Testing: test_nthSmallest
-2/4 Test: test_nthSmallest
-Command: "/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/tests/test_nthSmallest"
+2/4 Testing: test_exceptions
+2/4 Test: test_exceptions
+Command: "/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/tests/test_exceptions"
 Directory: /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/tests
-"test_nthSmallest" start time: Apr 12 14:45 MSK
+"test_exceptions" start time: Apr 12 17:57 MSK
 Output:
 ----------------------------------------------------------
 Running main() from ./googletest/src/gtest_main.cc
-[==========] Running 7 tests from 1 test suite.
+[==========] Running 6 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 7 tests from NthSmallestTest
-[ RUN      ] NthSmallestTest.SortedArray
-/home/zeculesu/Desktop/Artemia/algo_dop/dop2/tests/test_nthSmallest.cpp:15: Failure
-Expected equality of these values:
-  val
-    Which is: 2
-  referens
-    Which is: 3
-
-[  FAILED  ] NthSmallestTest.SortedArray (0 ms)
-[ RUN      ] NthSmallestTest.ReverseSortedArray
-[       OK ] NthSmallestTest.ReverseSortedArray (0 ms)
-[ RUN      ] NthSmallestTest.RandomOrder
-/home/zeculesu/Desktop/Artemia/algo_dop/dop2/tests/test_nthSmallest.cpp:27: Failure
-Expected equality of these values:
-  val
-    Which is: 5
-  8
-
-[  FAILED  ] NthSmallestTest.RandomOrder (0 ms)
-[ RUN      ] NthSmallestTest.DuplicateElements
-[       OK ] NthSmallestTest.DuplicateElements (0 ms)
-[ RUN      ] NthSmallestTest.SingleElement
-[       OK ] NthSmallestTest.SingleElement (0 ms)
-[ RUN      ] NthSmallestTest.EmptyVector
-[       OK ] NthSmallestTest.EmptyVector (0 ms)
-[ RUN      ] NthSmallestTest.OutOfRangeIndex
-[       OK ] NthSmallestTest.OutOfRangeIndex (0 ms)
-[----------] 7 tests from NthSmallestTest (0 ms total)
+[----------] 6 tests from ExceptionTest
+[ RUN      ] ExceptionTest.EmptyRange
+[       OK ] ExceptionTest.EmptyRange (0 ms)
+[ RUN      ] ExceptionTest.KTooSmall
+[       OK ] ExceptionTest.KTooSmall (0 ms)
+[ RUN      ] ExceptionTest.KTooLarge
+[       OK ] ExceptionTest.KTooLarge (0 ms)
+[ RUN      ] ExceptionTest.NegativeK
+[       OK ] ExceptionTest.NegativeK (0 ms)
+[ RUN      ] ExceptionTest.SingleElementValidK
+[       OK ] ExceptionTest.SingleElementValidK (0 ms)
+[ RUN      ] ExceptionTest.SingleElementInvalidK
+[       OK ] ExceptionTest.SingleElementInvalidK (0 ms)
+[----------] 6 tests from ExceptionTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 7 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 5 tests.
-[  FAILED  ] 2 tests, listed below:
-[  FAILED  ] NthSmallestTest.SortedArray
-[  FAILED  ] NthSmallestTest.RandomOrder
-
- 2 FAILED TESTS
+[==========] 6 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 6 tests.
 <end of output>
 Test time =   0.01 sec
 ----------------------------------------------------------
-Test Failed.
-"test_nthSmallest" end time: Apr 12 14:45 MSK
-"test_nthSmallest" time elapsed: 00:00:00
+Test Passed.
+"test_exceptions" end time: Apr 12 17:57 MSK
+"test_exceptions" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/4 Testing: test_partition
-3/4 Test: test_partition
+3/4 Testing: test_medianOfMedians
+3/4 Test: test_medianOfMedians
+Command: "/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/tests/test_medianOfMedians"
+Directory: /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/tests
+"test_medianOfMedians" start time: Apr 12 17:57 MSK
+Output:
+----------------------------------------------------------
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from MedianOfMediansTest
+[ RUN      ] MedianOfMediansTest.SmallArrays
+[       OK ] MedianOfMediansTest.SmallArrays (0 ms)
+[ RUN      ] MedianOfMediansTest.AllEqual
+[       OK ] MedianOfMediansTest.AllEqual (0 ms)
+[----------] 2 tests from MedianOfMediansTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_medianOfMedians" end time: Apr 12 17:57 MSK
+"test_medianOfMedians" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/4 Testing: test_partition
+4/4 Test: test_partition
 Command: "/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/tests/test_partition"
 Directory: /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/tests
-"test_partition" start time: Apr 12 14:45 MSK
+"test_partition" start time: Apr 12 17:57 MSK
 Output:
 ----------------------------------------------------------
 Running main() from ./googletest/src/gtest_main.cc
 [==========] Running 5 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 5 tests from PartitionTest
-[ RUN      ] PartitionTest.GroupsCorrectlyPartitioned
-[       OK ] PartitionTest.GroupsCorrectlyPartitioned (0 ms)
-[ RUN      ] PartitionTest.ReturnValueDependsOnN
-[       OK ] PartitionTest.ReturnValueDependsOnN (0 ms)
-[ RUN      ] PartitionTest.NOutOfBounds
-Boundary position: 4
-[       OK ] PartitionTest.NOutOfBounds (0 ms)
-[ RUN      ] PartitionTest.AllElementsEqual
-[       OK ] PartitionTest.AllElementsEqual (0 ms)
-[ RUN      ] PartitionTest.EmptyRange
-[       OK ] PartitionTest.EmptyRange (0 ms)
+[ RUN      ] PartitionTest.BasicPartitioningInt
+[       OK ] PartitionTest.BasicPartitioningInt (0 ms)
+[ RUN      ] PartitionTest.BasicPartitioningDouble
+[       OK ] PartitionTest.BasicPartitioningDouble (0 ms)
+[ RUN      ] PartitionTest.BasicPartitioningString
+[       OK ] PartitionTest.BasicPartitioningString (0 ms)
+[ RUN      ] PartitionTest.CustomTypePartitioning
+[       OK ] PartitionTest.CustomTypePartitioning (0 ms)
+[ RUN      ] PartitionTest.AlreadyPartitionedString
+[       OK ] PartitionTest.AlreadyPartitionedString (0 ms)
 [----------] 5 tests from PartitionTest (0 ms total)
 
 [----------] Global test environment tear-down
@@ -150,48 +126,8 @@ Boundary position: 4
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"test_partition" end time: Apr 12 14:45 MSK
+"test_partition" end time: Apr 12 17:57 MSK
 "test_partition" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/4 Testing: test_partition5
-4/4 Test: test_partition5
-Command: "/home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/tests/test_partition5"
-Directory: /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build/tests
-"test_partition5" start time: Apr 12 14:45 MSK
-Output:
-----------------------------------------------------------
-Running main() from ./googletest/src/gtest_main.cc
-[==========] Running 8 tests from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 8 tests from Partition5Test
-[ RUN      ] Partition5Test.BasicTest
-[       OK ] Partition5Test.BasicTest (0 ms)
-[ RUN      ] Partition5Test.CharTest
-[       OK ] Partition5Test.CharTest (0 ms)
-[ RUN      ] Partition5Test.EdgeCase
-[       OK ] Partition5Test.EdgeCase (0 ms)
-[ RUN      ] Partition5Test.SingleElement
-[       OK ] Partition5Test.SingleElement (0 ms)
-[ RUN      ] Partition5Test.ArrayTest
-[       OK ] Partition5Test.ArrayTest (0 ms)
-[ RUN      ] Partition5Test.RawPointerTest
-[       OK ] Partition5Test.RawPointerTest (0 ms)
-[ RUN      ] Partition5Test.StringTest
-[       OK ] Partition5Test.StringTest (0 ms)
-[ RUN      ] Partition5Test.ArrayStringTest
-[       OK ] Partition5Test.ArrayStringTest (0 ms)
-[----------] 8 tests from Partition5Test (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 8 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 8 tests.
-<end of output>
-Test time =   0.01 sec
-----------------------------------------------------------
-Test Passed.
-"test_partition5" end time: Apr 12 14:45 MSK
-"test_partition5" time elapsed: 00:00:00
-----------------------------------------------------------
-
-End testing: Apr 12 14:45 MSK
+End testing: Apr 12 17:57 MSK

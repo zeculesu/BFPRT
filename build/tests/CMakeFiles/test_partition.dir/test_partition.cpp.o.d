@@ -301,9 +301,6 @@ tests/CMakeFiles/test_partition.dir/test_partition.cpp.o: \
  /usr/include/gtest/gtest-test-part.h \
  /usr/include/gtest/gtest-typed-test.h \
  /usr/include/gtest/gtest_pred_impl.h /usr/include/gtest/gtest_prod.h \
- /usr/include/c++/13/list /usr/include/c++/13/bits/stl_list.h \
- /usr/include/c++/13/bits/list.tcc \
  /home/zeculesu/Desktop/Artemia/algo_dop/dop2/src/bfprt.h \
- /home/zeculesu/Desktop/Artemia/algo_dop/dop2/src/bfprt_impl.h \
  /usr/include/c++/13/algorithm /usr/include/c++/13/bits/ranges_algo.h \
  /usr/include/c++/13/pstl/glue_algorithm_defs.h

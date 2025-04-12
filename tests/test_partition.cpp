@@ -1,66 +1,88 @@
 #include <gtest/gtest.h>
 #include <vector>
-#include <array>
-#include <list>
 #include <string>
+#include <tuple>
+
 #include "bfprt.h"
 
-#include <algorithm>
-
-
-TEST(PartitionTest, GroupsCorrectlyPartitioned) {
-    std::vector<int> v = {3, 1, 4, 1, 5, 9, 2, 6};
-    auto pivotIt = v.begin() + 2; // = 4
-    auto n = 3;
-
-    auto boundary = partition(v.begin(), v.end() - 1, pivotIt, n);
-
-    for (auto it = v.begin(); it != boundary; ++it) {
-        ASSERT_LT(*it, 4);
-    }
-
-    auto eqStart = boundary;
-    while (eqStart != v.end() && *eqStart == 4) ++eqStart;
-    for (auto it = boundary; it != eqStart; ++it) {
-        ASSERT_EQ(*it, 4);
-    }
-
-    for (auto it = eqStart; it != v.end(); ++it) {
-        ASSERT_GT(*it, 4);
-    }
-}
-
-TEST(PartitionTest, ReturnValueDependsOnN) {
-    std::vector<int> v = {0, 2, 6, 3, 5, 1, 1};
-    auto pivotIt = v.begin() + 3; // = 3
+// Пользовательский тип для тестирования
+struct Person {
+    std::string name;
+    int age;
     
-    auto boundary1 = partition(v.begin(), v.end() - 1, pivotIt, 1);
-    EXPECT_EQ(boundary1 - v.begin(), 4);
+    bool operator<(const Person& other) const { return age < other.age; }
+    bool operator>=(const Person& other) const { return !(*this < other); }
+    bool operator==(const Person& other) const { return age == other.age && name == other.name; }
+};
+
+TEST(PartitionTest, BasicPartitioningInt) {
+    std::vector<int> vec = {3, 1, 4, 2, 5};
+    auto pivotIt = vec.begin() + 2; // pivot = 4
+    auto finalPos = partition(vec.begin(), vec.end(), pivotIt);
+
+    for (auto it = vec.begin(); it != finalPos; ++it) {
+        EXPECT_LT(*it, *finalPos);
+    }
+    for (auto it = finalPos + 1; it != vec.end(); ++it) {
+        EXPECT_GE(*it, *finalPos);
+    }
+    EXPECT_EQ(*finalPos, 4);
 }
 
-TEST(PartitionTest, NOutOfBounds) {
-    std::vector<int> v = {3, 1, 4, 1, 5, 9, 2, 6};
+TEST(PartitionTest, BasicPartitioningDouble) {
+    std::vector<double> vec = {3.5, 1.1, 4.2, 2.7, 5.3};
+    auto pivotIt = vec.begin() + 2; // pivot = 4.2
+    auto finalPos = partition(vec.begin(), vec.end(), pivotIt);
 
-    auto pivotIndex = v.begin() + 2;
-
-    auto boundary = partition(v.begin(), v.end() - 1, pivotIndex, 10);
-    std::cout << "Boundary position: " << (boundary - v.begin()) << "\n";
-
-    EXPECT_EQ(boundary - v.begin(), 4);
+    for (auto it = vec.begin(); it != finalPos; ++it) {
+        EXPECT_LT(*it, *finalPos);
+    }
+    for (auto it = finalPos + 1; it != vec.end(); ++it) {
+        EXPECT_GE(*it, *finalPos);
+    }
+    EXPECT_DOUBLE_EQ(*finalPos, 4.2);
 }
 
-TEST(PartitionTest, AllElementsEqual) {
-    std::vector<int> v = {2, 2, 2, 2, 2};
-    auto pivotIt = v.begin() + 1;
-    auto n = 2;
+TEST(PartitionTest, BasicPartitioningString) {
+    std::vector<std::string> vec = {"banana", "apple", "orange", "grape", "cherry"};
+    auto pivotIt = vec.begin() + 2; // pivot = "orange"
+    auto finalPos = partition(vec.begin(), vec.end(), pivotIt);
 
-    auto boundary = partition(v.begin(), v.end() - 1, pivotIt, n);
-
-    EXPECT_EQ(boundary, v.begin() + n);
+    for (auto it = vec.begin(); it != finalPos; ++it) {
+        EXPECT_LT(*it, *finalPos);
+    }
+    for (auto it = finalPos + 1; it != vec.end(); ++it) {
+        EXPECT_GE(*it, *finalPos);
+    }
+    EXPECT_EQ(*finalPos, "orange");
 }
 
-TEST(PartitionTest, EmptyRange) {
-    std::vector<int> v;
-    auto boundary = partition(v.begin(), v.end(), v.begin(), 0);
-    EXPECT_EQ(boundary, v.begin());
+TEST(PartitionTest, CustomTypePartitioning) {
+    std::vector<Person> vec = {
+        {"Alice", 30},
+        {"Bob", 20},
+        {"Charlie", 25},
+        {"Dave", 35},
+        {"Eve", 22}
+    };
+    auto pivotIt = vec.begin() + 2; // pivot = Charlie, 25
+    auto finalPos = partition(vec.begin(), vec.end(), pivotIt);
+
+    for (auto it = vec.begin(); it != finalPos; ++it) {
+        EXPECT_LT(it->age, finalPos->age);
+    }
+    for (auto it = finalPos + 1; it != vec.end(); ++it) {
+        EXPECT_GE(it->age, finalPos->age);
+    }
+    EXPECT_EQ(finalPos->name, "Charlie");
+    EXPECT_EQ(finalPos->age, 25);
+}
+
+TEST(PartitionTest, AlreadyPartitionedString) {
+    std::vector<std::string> vec = {"apple", "banana", "cherry", "grape", "orange"};
+    auto pivotIt = vec.begin() + 2; // pivot = "cherry"
+    auto finalPos = partition(vec.begin(), vec.end(), pivotIt);
+
+    EXPECT_EQ(finalPos, vec.begin() + 2);
+    EXPECT_EQ(vec, (std::vector<std::string>{"apple", "banana", "cherry", "grape", "orange"}));
 }

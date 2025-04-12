@@ -1,7 +1,5 @@
-test_median 3 0
-test_partition 8 0.000736407
-test_partition5 8 0.000877871
-test_nthSmallest 0 0
+test_bfprt_impl 1 0.631009
+test_exceptions 1 0.00641136
+test_medianOfMedians 1 0.00861141
+test_partition 1 0.00825389
 ---
-test_median
-test_nthSmallest

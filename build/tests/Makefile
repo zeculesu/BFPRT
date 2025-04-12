@@ -127,32 +127,46 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-tests/CMakeFiles/test_median.dir/rule:
-	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_median.dir/rule
-.PHONY : tests/CMakeFiles/test_median.dir/rule
+tests/CMakeFiles/test_bfprt_impl.dir/rule:
+	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_bfprt_impl.dir/rule
+.PHONY : tests/CMakeFiles/test_bfprt_impl.dir/rule
 
 # Convenience name for target.
-test_median: tests/CMakeFiles/test_median.dir/rule
-.PHONY : test_median
+test_bfprt_impl: tests/CMakeFiles/test_bfprt_impl.dir/rule
+.PHONY : test_bfprt_impl
 
 # fast build rule for target.
-test_median/fast:
-	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_median.dir/build.make tests/CMakeFiles/test_median.dir/build
-.PHONY : test_median/fast
+test_bfprt_impl/fast:
+	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_bfprt_impl.dir/build.make tests/CMakeFiles/test_bfprt_impl.dir/build
+.PHONY : test_bfprt_impl/fast
 
 # Convenience name for target.
-tests/CMakeFiles/test_nthSmallest.dir/rule:
-	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_nthSmallest.dir/rule
-.PHONY : tests/CMakeFiles/test_nthSmallest.dir/rule
+tests/CMakeFiles/test_exceptions.dir/rule:
+	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_exceptions.dir/rule
+.PHONY : tests/CMakeFiles/test_exceptions.dir/rule
 
 # Convenience name for target.
-test_nthSmallest: tests/CMakeFiles/test_nthSmallest.dir/rule
-.PHONY : test_nthSmallest
+test_exceptions: tests/CMakeFiles/test_exceptions.dir/rule
+.PHONY : test_exceptions
 
 # fast build rule for target.
-test_nthSmallest/fast:
-	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_nthSmallest.dir/build.make tests/CMakeFiles/test_nthSmallest.dir/build
-.PHONY : test_nthSmallest/fast
+test_exceptions/fast:
+	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_exceptions.dir/build.make tests/CMakeFiles/test_exceptions.dir/build
+.PHONY : test_exceptions/fast
+
+# Convenience name for target.
+tests/CMakeFiles/test_medianOfMedians.dir/rule:
+	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_medianOfMedians.dir/rule
+.PHONY : tests/CMakeFiles/test_medianOfMedians.dir/rule
+
+# Convenience name for target.
+test_medianOfMedians: tests/CMakeFiles/test_medianOfMedians.dir/rule
+.PHONY : test_medianOfMedians
+
+# fast build rule for target.
+test_medianOfMedians/fast:
+	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_medianOfMedians.dir/build.make tests/CMakeFiles/test_medianOfMedians.dir/build
+.PHONY : test_medianOfMedians/fast
 
 # Convenience name for target.
 tests/CMakeFiles/test_partition.dir/rule:
@@ -168,67 +182,77 @@ test_partition/fast:
 	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_partition.dir/build.make tests/CMakeFiles/test_partition.dir/build
 .PHONY : test_partition/fast
 
-# Convenience name for target.
-tests/CMakeFiles/test_partition5.dir/rule:
-	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_partition5.dir/rule
-.PHONY : tests/CMakeFiles/test_partition5.dir/rule
-
-# Convenience name for target.
-test_partition5: tests/CMakeFiles/test_partition5.dir/rule
-.PHONY : test_partition5
-
-# fast build rule for target.
-test_partition5/fast:
-	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_partition5.dir/build.make tests/CMakeFiles/test_partition5.dir/build
-.PHONY : test_partition5/fast
-
-test_median.o: test_median.cpp.o
-.PHONY : test_median.o
+test_bfprt_impl.o: test_bfprt_impl.cpp.o
+.PHONY : test_bfprt_impl.o
 
 # target to build an object file
-test_median.cpp.o:
-	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_median.dir/build.make tests/CMakeFiles/test_median.dir/test_median.cpp.o
-.PHONY : test_median.cpp.o
+test_bfprt_impl.cpp.o:
+	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_bfprt_impl.dir/build.make tests/CMakeFiles/test_bfprt_impl.dir/test_bfprt_impl.cpp.o
+.PHONY : test_bfprt_impl.cpp.o
 
-test_median.i: test_median.cpp.i
-.PHONY : test_median.i
+test_bfprt_impl.i: test_bfprt_impl.cpp.i
+.PHONY : test_bfprt_impl.i
 
 # target to preprocess a source file
-test_median.cpp.i:
-	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_median.dir/build.make tests/CMakeFiles/test_median.dir/test_median.cpp.i
-.PHONY : test_median.cpp.i
+test_bfprt_impl.cpp.i:
+	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_bfprt_impl.dir/build.make tests/CMakeFiles/test_bfprt_impl.dir/test_bfprt_impl.cpp.i
+.PHONY : test_bfprt_impl.cpp.i
 
-test_median.s: test_median.cpp.s
-.PHONY : test_median.s
+test_bfprt_impl.s: test_bfprt_impl.cpp.s
+.PHONY : test_bfprt_impl.s
 
 # target to generate assembly for a file
-test_median.cpp.s:
-	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_median.dir/build.make tests/CMakeFiles/test_median.dir/test_median.cpp.s
-.PHONY : test_median.cpp.s
+test_bfprt_impl.cpp.s:
+	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_bfprt_impl.dir/build.make tests/CMakeFiles/test_bfprt_impl.dir/test_bfprt_impl.cpp.s
+.PHONY : test_bfprt_impl.cpp.s
 
-test_nthSmallest.o: test_nthSmallest.cpp.o
-.PHONY : test_nthSmallest.o
+test_exceptions.o: test_exceptions.cpp.o
+.PHONY : test_exceptions.o
 
 # target to build an object file
-test_nthSmallest.cpp.o:
-	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_nthSmallest.dir/build.make tests/CMakeFiles/test_nthSmallest.dir/test_nthSmallest.cpp.o
-.PHONY : test_nthSmallest.cpp.o
+test_exceptions.cpp.o:
+	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_exceptions.dir/build.make tests/CMakeFiles/test_exceptions.dir/test_exceptions.cpp.o
+.PHONY : test_exceptions.cpp.o
 
-test_nthSmallest.i: test_nthSmallest.cpp.i
-.PHONY : test_nthSmallest.i
+test_exceptions.i: test_exceptions.cpp.i
+.PHONY : test_exceptions.i
 
 # target to preprocess a source file
-test_nthSmallest.cpp.i:
-	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_nthSmallest.dir/build.make tests/CMakeFiles/test_nthSmallest.dir/test_nthSmallest.cpp.i
-.PHONY : test_nthSmallest.cpp.i
+test_exceptions.cpp.i:
+	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_exceptions.dir/build.make tests/CMakeFiles/test_exceptions.dir/test_exceptions.cpp.i
+.PHONY : test_exceptions.cpp.i
 
-test_nthSmallest.s: test_nthSmallest.cpp.s
-.PHONY : test_nthSmallest.s
+test_exceptions.s: test_exceptions.cpp.s
+.PHONY : test_exceptions.s
 
 # target to generate assembly for a file
-test_nthSmallest.cpp.s:
-	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_nthSmallest.dir/build.make tests/CMakeFiles/test_nthSmallest.dir/test_nthSmallest.cpp.s
-.PHONY : test_nthSmallest.cpp.s
+test_exceptions.cpp.s:
+	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_exceptions.dir/build.make tests/CMakeFiles/test_exceptions.dir/test_exceptions.cpp.s
+.PHONY : test_exceptions.cpp.s
+
+test_medianOfMedians.o: test_medianOfMedians.cpp.o
+.PHONY : test_medianOfMedians.o
+
+# target to build an object file
+test_medianOfMedians.cpp.o:
+	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_medianOfMedians.dir/build.make tests/CMakeFiles/test_medianOfMedians.dir/test_medianOfMedians.cpp.o
+.PHONY : test_medianOfMedians.cpp.o
+
+test_medianOfMedians.i: test_medianOfMedians.cpp.i
+.PHONY : test_medianOfMedians.i
+
+# target to preprocess a source file
+test_medianOfMedians.cpp.i:
+	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_medianOfMedians.dir/build.make tests/CMakeFiles/test_medianOfMedians.dir/test_medianOfMedians.cpp.i
+.PHONY : test_medianOfMedians.cpp.i
+
+test_medianOfMedians.s: test_medianOfMedians.cpp.s
+.PHONY : test_medianOfMedians.s
+
+# target to generate assembly for a file
+test_medianOfMedians.cpp.s:
+	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_medianOfMedians.dir/build.make tests/CMakeFiles/test_medianOfMedians.dir/test_medianOfMedians.cpp.s
+.PHONY : test_medianOfMedians.cpp.s
 
 test_partition.o: test_partition.cpp.o
 .PHONY : test_partition.o
@@ -254,30 +278,6 @@ test_partition.cpp.s:
 	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_partition.dir/build.make tests/CMakeFiles/test_partition.dir/test_partition.cpp.s
 .PHONY : test_partition.cpp.s
 
-test_partition5.o: test_partition5.cpp.o
-.PHONY : test_partition5.o
-
-# target to build an object file
-test_partition5.cpp.o:
-	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_partition5.dir/build.make tests/CMakeFiles/test_partition5.dir/test_partition5.cpp.o
-.PHONY : test_partition5.cpp.o
-
-test_partition5.i: test_partition5.cpp.i
-.PHONY : test_partition5.i
-
-# target to preprocess a source file
-test_partition5.cpp.i:
-	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_partition5.dir/build.make tests/CMakeFiles/test_partition5.dir/test_partition5.cpp.i
-.PHONY : test_partition5.cpp.i
-
-test_partition5.s: test_partition5.cpp.s
-.PHONY : test_partition5.s
-
-# target to generate assembly for a file
-test_partition5.cpp.s:
-	cd /home/zeculesu/Desktop/Artemia/algo_dop/dop2/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_partition5.dir/build.make tests/CMakeFiles/test_partition5.dir/test_partition5.cpp.s
-.PHONY : test_partition5.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -287,22 +287,22 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... test_median"
-	@echo "... test_nthSmallest"
+	@echo "... test_bfprt_impl"
+	@echo "... test_exceptions"
+	@echo "... test_medianOfMedians"
 	@echo "... test_partition"
-	@echo "... test_partition5"
-	@echo "... test_median.o"
-	@echo "... test_median.i"
-	@echo "... test_median.s"
-	@echo "... test_nthSmallest.o"
-	@echo "... test_nthSmallest.i"
-	@echo "... test_nthSmallest.s"
+	@echo "... test_bfprt_impl.o"
+	@echo "... test_bfprt_impl.i"
+	@echo "... test_bfprt_impl.s"
+	@echo "... test_exceptions.o"
+	@echo "... test_exceptions.i"
+	@echo "... test_exceptions.s"
+	@echo "... test_medianOfMedians.o"
+	@echo "... test_medianOfMedians.i"
+	@echo "... test_medianOfMedians.s"
 	@echo "... test_partition.o"
 	@echo "... test_partition.i"
 	@echo "... test_partition.s"
-	@echo "... test_partition5.o"
-	@echo "... test_partition5.i"
-	@echo "... test_partition5.s"
 .PHONY : help
 
 
