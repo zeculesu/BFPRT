@@ -7,7 +7,7 @@
 
 template <RandomAccessIterator It>
 auto median_of_median(It left, It right) -> typename std::iterator_traits<It>::value_type {
-    size_t size = right - left + 1;
+    size_t size = std::distance(left, right);
 
     if (size % 2 == 1) {
         return nthSmallest(left, right, size / 2);
@@ -16,48 +16,63 @@ auto median_of_median(It left, It right) -> typename std::iterator_traits<It>::v
         auto second = nthSmallest(left, right, size / 2);
         using ValueType = typename std::iterator_traits<It>::value_type;
 
-        return (first + second) / static_cast<ValueType>(2); 
-    }   
+        return (first + second) / static_cast<ValueType>(2);
+    }
 }
+
 
 template <RandomAccessIterator It>
 auto nthSmallest(It left, It right, std::size_t n) -> typename std::iterator_traits<It>::value_type {
+    std::size_t size = std::distance(left, right);
+
+    if (size == 0) {
+        throw std::out_of_range("nthSmallest: empty range");
+    }
+    if (size == 1) {
+        return *left;
+    }
+    if (n >= size) {
+        throw std::out_of_range("nthSmallest: index out of range");
+    }
+
     auto it = select(left, right, n);
     return *it;
 }
 
 
 template <RandomAccessIterator It>
-It select(It left, It right, std::size_t n){
+It select(It left, It right, std::size_t n) {
     It pivotIndex;
     while (1) {
         if (left == right) return left;
         pivotIndex = pivot(left, right);
         pivotIndex = partition(left, right, pivotIndex, n);
         if (n == std::distance(left, pivotIndex)) return pivotIndex;
-        else if (n < std::distance(left, pivotIndex)) right = pivotIndex - 1;
+        else if (n < std::distance(left, pivotIndex)) right = pivotIndex;
         else left = pivotIndex + 1;
     }
 }
 
+
 template <RandomAccessIterator It>
 It pivot(It left, It right) {
-    if (right - left < 5) return partition5(left, right);
+    if (std::distance(left, right) < 5) return partition5(left, right);
 
     It subRight, mediana5;
 
-    for (auto i = left; i <= right; i = i + 5){
+    for (auto i = left; i < right; i = i + 5) {
         subRight = i + 4;
-        if (subRight > right) {subRight = right;}
+        if (subRight >= right) { subRight = right - 1; }
         mediana5 = partition5(i, subRight);
-        std::swap(*mediana5, *(left + (i - left) / 5));
+        std::swap(*mediana5, *(left + std::distance(left, i) / 5));
     }
+
     auto mid = std::distance(left, right) / 10 + 1;
     return select(left, left + (right - left) / 5, mid);
 }
 
 template <RandomAccessIterator It>
-It partition(It left, It right, It pivotIndex, std::size_t n){
+It partition(It left, It right, It pivotIndex, std::size_t n) {
     if (std::distance(left, right) <= 0) return left;
 
     std::iter_swap(pivotIndex, right);
@@ -91,9 +106,9 @@ It partition(It left, It right, It pivotIndex, std::size_t n){
 }
 
 template <RandomAccessIterator It>
-It partition5(It left, It right){
+It partition5(It left, It right) {
     std::sort(left, right);
-    return left + (right - left) / 2;
+    return left + (std::distance(left, right) / 2);
 }
 
 #endif

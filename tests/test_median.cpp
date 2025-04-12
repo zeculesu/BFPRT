@@ -25,8 +25,7 @@ TEST(MedianOfMedianTest, EvenSizeArray) {
     // 1 2 3 4 5 6 
     auto result = median_of_median(v.begin(), v.end() - 1);
     std::sort(v.begin(), v.end());
-    double expected = 0.5 * (v[v.size()/2 - 1] + v[v.size()/2]);
-    EXPECT_DOUBLE_EQ(result, expected);
+    EXPECT_DOUBLE_EQ(result, 4.0);
 }
 
 TEST(MedianOfMedianTest, SmallArrays) {
@@ -36,3 +35,6 @@ TEST(MedianOfMedianTest, SmallArrays) {
     std::vector<int> v2 = {3, 1};
     EXPECT_DOUBLE_EQ(median_of_median(v2.begin(), v2.end() - 1), 2.0);
 }
+
+
+//std::nth_element
