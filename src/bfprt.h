@@ -3,6 +3,9 @@
 
 #include <algorithm>
 #include <iterator>
+#include <stdexcept>
+#include <string>
+#include <sstream>
 
 template <typename It>
 concept RandomAccessIterator = std::random_access_iterator<It>;
@@ -51,10 +54,24 @@ bfprt(It first, It last, int k) {
     int size = std::distance(first, last);
 
     if (size == 0) {
-        throw std::invalid_argument("Empty range in bfprt()");
+        std::ostringstream oss;
+        oss << "Error: Empty range in bfprt()\n"
+            << "Function parameters:\n"
+            << "  First iterator value: " << (first != last ? *first : -1) << "\n"
+            << "  Size of range: " << size << "\n"
+            << "  Requested k: " << k;
+        throw std::invalid_argument(oss.str());
     }
+
     if (k <= 0 || k > size) {
-        throw std::out_of_range("k is out of range in bfprt()");
+        std::ostringstream oss;
+        oss << "Error: k is out of range in bfprt()\n"
+            << "Function parameters:\n"
+            << "  First iterator value: " << *first << "\n"
+            << "  Last iterator value: " << *std::prev(last) << "\n"
+            << "  Size of range: " << size << "\n"
+            << "  Requested k: " << k;
+        throw std::out_of_range(oss.str());
     }
 
     if (size <= 5) {
