@@ -7,12 +7,9 @@
 #include <string>
 #include <sstream>
 
-template <typename It>
-concept RandomAccessIterator = std::random_access_iterator<It>;
-
-template <RandomAccessIterator It>
-It partition(It first, It last, It pivotIt) {
-    auto pivotValue = *pivotIt;
+template <std::random_access_iterator It>
+It lomutoPartition(It first, It last, It pivotIt) {
+    auto pivotValue = std::move(*pivotIt);
     std::iter_swap(std::prev(last), pivotIt);
     It store = first;
     for (It it = first; it < std::prev(last); ++it) {
@@ -22,10 +19,16 @@ It partition(It first, It last, It pivotIt) {
         }
     }
     std::iter_swap(std::prev(last), store); 
+    *store = std::move(pivotValue);
     return store;
 }
 
-template <RandomAccessIterator It>
+template <std::random_access_iterator It>
+It partition(It first, It last, It pivotIt) {
+    return lomutoPartition(first, last, pivotIt);
+}
+
+template <std::random_access_iterator It>
 It medianOfMedians(It first, It last) {
     auto size = std::distance(first, last);
     if (size <= 5) {
@@ -48,7 +51,7 @@ It medianOfMedians(It first, It last) {
     return medianOfMedians(first, first + numMedians);
 }
 
-template <RandomAccessIterator It>
+template <std::random_access_iterator It>
 typename std::iterator_traits<It>::value_type
 bfprt(It first, It last, int k) {
     int size = std::distance(first, last);

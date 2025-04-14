@@ -5,14 +5,18 @@
 
 #include "bfprt.h"
 
-// Пользовательский тип для тестирования
+// Прикольный тип для тестирования
 struct Person {
     std::string name;
     int age;
     
-    bool operator<(const Person& other) const { return age < other.age; }
-    bool operator>=(const Person& other) const { return !(*this < other); }
-    bool operator==(const Person& other) const { return age == other.age && name == other.name; }
+    bool operator<(const Person& other) const {
+        return std::tie(age, name) < std::tie(other.age, other.name);
+    }
+
+    bool operator==(const Person& other) const {
+        return std::tie(age, name) == std::tie(other.age, other.name);
+    }
 };
 
 TEST(PartitionTest, BasicPartitioningInt) {
@@ -65,7 +69,7 @@ TEST(PartitionTest, CustomTypePartitioning) {
         {"Dave", 35},
         {"Eve", 22}
     };
-    auto pivotIt = vec.begin() + 2; // pivot = Charlie, 25
+    auto pivotIt = vec.begin() + 2;
     auto finalPos = partition(vec.begin(), vec.end(), pivotIt);
 
     for (auto it = vec.begin(); it != finalPos; ++it) {

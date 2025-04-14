@@ -4,9 +4,10 @@
 #include <random>
 #include "bfprt.h"
 
-std::vector<int> generateRandomVector(size_t size) {
+std::mt19937 rng(42);
+
+std::vector<int> generateRandomVector(size_t size, std::mt19937& rng) {
     std::vector<int> vec(size);
-    std::mt19937 rng(std::random_device{}());
     std::uniform_int_distribution<int> dist(1, 10000);
     
     for (auto& v : vec) {
@@ -18,7 +19,7 @@ std::vector<int> generateRandomVector(size_t size) {
 static void BM_StdNthElement(benchmark::State& state) {
     auto size = state.range(0);
     auto k = state.range(1);
-    auto data = generateRandomVector(size);
+    auto data = generateRandomVector(size, rng);
     
     for (auto _ : state) {
         state.PauseTiming();
@@ -33,7 +34,7 @@ static void BM_StdNthElement(benchmark::State& state) {
 static void BM_BFPRT(benchmark::State& state) {
     auto size = state.range(0);
     auto k = state.range(1);
-    auto data = generateRandomVector(size);
+    auto data = generateRandomVector(size, rng);
     
     for (auto _ : state) {
         state.PauseTiming();
