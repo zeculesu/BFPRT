@@ -13,15 +13,15 @@ concept RandomAccessIterator = std::random_access_iterator<It>;
 template <RandomAccessIterator It>
 It partition(It first, It last, It pivotIt) {
     auto pivotValue = *pivotIt;
-    std::swap(*(last - 1), *pivotIt);
+    std::iter_swap(std::prev(last), pivotIt);
     It store = first;
-    for (It it = first; it < last - 1; ++it) {
+    for (It it = first; it < std::prev(last); ++it) {
         if (*it < pivotValue) {
-            std::swap(*it, *store);
-            ++store;
+            std::iter_swap(it, store);
+            store = std::next(store);
         }
     }
-    std::swap(*(last - 1), *store); 
+    std::iter_swap(std::prev(last), store); 
     return store;
 }
 
