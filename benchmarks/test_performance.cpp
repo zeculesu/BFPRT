@@ -21,7 +21,9 @@ static void BM_StdNthElement(benchmark::State& state) {
     auto data = generateRandomVector(size);
     
     for (auto _ : state) {
+        state.PauseTiming();
         std::vector<int> vec = data;
+        state.ResumeTiming();
         std::nth_element(vec.begin(), vec.begin() + k - 1, vec.end());
         benchmark::DoNotOptimize(vec[k-1]);
     }
@@ -34,7 +36,9 @@ static void BM_BFPRT(benchmark::State& state) {
     auto data = generateRandomVector(size);
     
     for (auto _ : state) {
+        state.PauseTiming();
         std::vector<int> vec = data;
+        state.ResumeTiming();
         int result = bfprt(vec.begin(), vec.end(), k);
         benchmark::DoNotOptimize(result);
     }
